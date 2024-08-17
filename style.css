@@ -43,10 +43,17 @@
 
 .bg-slide,
 .bg-slide .circle,
-.bg-slide .circle img {
+.bg-slide .circle img,
+.circle-darktransp {
     position: absolute;
     width: 100%;
     height: 100%;
+}
+
+.bg-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .bg-slide .circle {
@@ -55,15 +62,41 @@
     overflow: hidden;
 }
 
-.bg-slide .circle.large {
+.bg-slide .circle.large,
+.circle-darktransp {
    clip-path: circle(50% at 50% 50%); 
 }
 
 .bg-slide .circle.small {
     clip-path: circle(30% at 50% 50%);
+    z-index: 12;
 }
 
 .bg-slide .circle img {
     object-fit: cover;
     transform: rotate(0deg) scale(2);
+}
+
+.circle-darktransp {
+    background: rgba(0, 0, 0, .1);
+}
+
+.bg-slide .content-text {
+  position: absolute;  
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-text .place h1 {
+    font-size: 60px;
+    letter-spacing: 80px;
+    margin-right: -80px;   
+}
+
+.content-text .country h2 {
+    font-size: 60px;
+    letter-spacing: 30px;
+    margin-right: -30px;
 }
